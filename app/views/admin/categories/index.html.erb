@@ -1,2 +1,24 @@
-<h1>Admin::Categories#index</h1>
-<p>Find me in app/views/admin/categories/index.html.erb</p>
+<section class="admin-categories-index">
+  <header>
+    <h1>Admin &raquo; Categories</h1>
+  </header>
+
+  <div class="well">
+    <%= link_to ' + New Category', new_admin_category_path, class: 'btn btn-info' %>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
